@@ -18,6 +18,8 @@ jobs:
       - uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install fonts
+        run: make fonts
       - name: Run Tectonic
         run: make
       - name: Upload PDFs
