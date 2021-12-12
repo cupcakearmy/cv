@@ -1,4 +1,4 @@
-fonts:
+prepare:
 	./fonts/install.sh
 
 build:
