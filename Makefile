@@ -3,4 +3,4 @@ prepare:
 
 build:
 	tectonic cv.tex
-	mv cv.pdf "CV - Niccolo Borgioli.pdf"
+	mv cv.pdf "CV_Niccolo_Borgioli.pdf"
