@@ -17,8 +17,10 @@ jobs:
       - uses: wtfjoke/setup-tectonic@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install fonts
+        run: make prepare
       - name: Run Tectonic
-        run: make
+        run: make build
       - name: Release
         uses: ncipollo/release-action@v1
         with:
