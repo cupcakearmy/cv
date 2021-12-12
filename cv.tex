@@ -1,4 +1,5 @@
 % Template Adapted/Inspired/Shamefully stolen from: https://www.overleaf.com/latex/templates/academic-cv-template/vqghvksnqdhv
+% Color Scheme Adapted/Inspired/Shamefully stolen from: https://jacobleech.com/
 
 
 \documentclass[letterpaper,12pt]{article}
@@ -6,9 +7,14 @@
 \usepackage{hyperref, enumitem, longtable, amsmath, array, multicol }
 \usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0in, footskip=.2in]{geometry}
 
+% Images
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
 % Set colors
 \usepackage[dvipsnames]{xcolor}
 \definecolor{bg}{HTML}{f7ecd3}
+\definecolor{accent}{HTML}{45433b}
 \hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=MidnightBlue}
 \usepackage{pagecolor}
 \pagecolor{bg}
@@ -27,7 +33,9 @@
 }
 
 % Utility
-\newcommand{\headingfont}{\Large\color{OliveGreen}\BluuNext}
+\newcommand{\version}{1.0.0-rc.0}
+
+\newcommand{\headingfont}{\Large\color{accent}\BluuNext}
 
 \newenvironment{compactlist}{
   \begin{itemize}[noitemsep,nolistsep,partopsep=-20pt,topsep=-20pt,leftmargin=0pt, label=--]
@@ -54,12 +62,29 @@
 % Actual Document
 \begin{document}
 
-\begin{SectionTable}{\headingfont \Huge Niccolo Borgioli} &
-  E-Mail:   \href{mailto:hi@nicco.io}{hi@nicco.io}    \newline
-  Website:  \href{https://nicco.io}{nicco.io} \newline
-  Blog: \href{http://nicco.io/blog}{nicco.io/blog} \newline
-  Github: \href{https://github.com/cupcakearmy}{cupcakearmy} \newline
-  Citizenship: Italy, Germany
+\begin{SectionTable}{\headingfont \Huge Niccolo Borgioli}
+  &
+  \begin{lr}
+    E-Mail:   \href{mailto:hi@nicco.io}{hi@nicco.io}    \newline
+    Website:  \href{https://nicco.io}{nicco.io} \newline
+    Blog: \href{http://nicco.io/blog}{nicco.io/blog} \newline
+    Github: \href{https://github.com/cupcakearmy}{cupcakearmy} \newline
+    Citizenship: Italy, Germany \newline
+
+    \footnotesize{
+      \textit{Revision:} \version \newline
+      \textit{Date:} \today
+    }
+
+    \columnbreak
+
+    {
+      \setlength{\fboxsep}{0pt}
+      \setlength{\fboxrule}{3pt}
+      \fcolorbox{accent}{accent}{\includegraphics[height=4.5cm]{photo}}
+    }
+
+  \end{lr}
 \end{SectionTable}
 
 \begin{SectionTable}{\headingfont Industry Experience}
