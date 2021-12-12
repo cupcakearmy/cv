@@ -1,0 +1,343 @@
+% Template Adapted/Inspired/Shamefully stolen from: https://www.overleaf.com/latex/templates/academic-cv-template/vqghvksnqdhv
+
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{hyperref, enumitem, longtable, amsmath, array, multicol }
+\usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0in, footskip=.2in]{geometry}
+
+% Set colors
+\usepackage[dvipsnames]{xcolor}
+\definecolor{bg}{HTML}{f7ecd3}
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=MidnightBlue}
+\usepackage{pagecolor}
+\pagecolor{bg}
+
+% Typography
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Lora}
+\newfontfamily\BluuNext[UprightFont={* Titling},]{Bluu Next}
+
+% Footnotes
+\usepackage{enotez}
+\newcommand{\note}[1]{
+  \endnote{\href{#1}{#1}}
+}
+
+% Utility
+\newcommand{\headingfont}{\Large\color{OliveGreen}\BluuNext}
+
+\newenvironment{compactlist}{
+  \begin{itemize}[noitemsep,nolistsep,partopsep=-20pt,topsep=-20pt,leftmargin=0pt, label=--]
+      }{
+  \end{itemize}
+}
+
+\newenvironment{lr}{
+  \setlength\multicolsep{-1.7em}
+  \begin{multicols}{2}
+}{
+  \end{multicols}
+}
+
+% CV
+\newcolumntype{R}{>{\raggedleft}p{1.5in}}
+
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.7}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\}
+{\end{longtable}\vspace{-.3cm}}
+
+% Actual Document
+\begin{document}
+
+\begin{SectionTable}{\headingfont \Huge Niccolo Borgioli} &
+  E-Mail:   \href{mailto:hi@nicco.io}{hi@nicco.io}    \newline
+  Website:  \href{https://nicco.io}{nicco.io} \newline
+  Blog: \href{http://nicco.io/blog}{nicco.io/blog} \newline
+  Github: \href{https://github.com/cupcakearmy}{cupcakearmy} \newline
+  Citizenship: Italy, Germany
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Industry Experience}
+  2013 &
+  European Central Bank \note{https://www.ecb.europa.eu/} \newline
+  \textbf{Web \& Publications Internship } \newline
+  I worked in the Web \& Publications department, where I helped develop and update webpages.
+  \\
+
+  2017 -- 2020 &
+  3m5 \note{https://www.3m5.de/} \newline
+  \textbf{Full-stack Developer} \newline
+  B2B Development \& maintenance of projects for customers. Websites and mobile apps.
+  \\
+
+  2020 -- Current &
+  Lovoo \note{https://www.lovoo.com/} \newline
+  \textbf{Software Engineer} \newline
+  Software development for the mobile app, website and internal tools.
+  \\
+
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont Education}
+  2002 -- 2014 &
+  European School Frankfurt \note{https://www.esffm.org/} \newline
+  \textbf{European Baccalaureate} \newline
+  I took written examinations in: Italian, German, maths, physics and economics and oral exams in: Italian, English and geography. My last years included also philosophy and history.
+  \\
+
+  2014 -- 2016 &
+  ETH Zürich \note{https://ethz.ch} \newline
+  Electrical Engineering
+  \\
+
+  2016 -- 2020 &
+  TU Dresden \note{https://tu-dresden.de/} \newline
+  \textbf{Bachelor of Science} \newline
+  Computer Science
+  \\
+
+  2020 -- Current &
+  TU Dresden \note{https://tu-dresden.de/} \newline
+  \textbf{Master of Science} \newline
+  Computer Science
+
+\end{SectionTable}
+
+
+\begin{SectionTable}{\headingfont Skills}
+
+  Languages &
+  Italian: Native \newline
+  German: Native \newline
+  English: Fluent \newline
+  \\
+
+  Frontend &
+  \begin{lr}
+    \textbf{Languages}
+    \begin{compactlist}
+      \item Javascript
+      \item Typescript
+      \item CSS
+      \item HTML
+    \end{compactlist}
+
+    \columnbreak
+
+    \textbf{Frameworks}
+    \begin{compactlist}
+      \item Svelte
+      \item React
+      \item Vue
+      \item React Native
+      \item Electron
+      \item Browser Extensions
+    \end{compactlist}
+  \end{lr}
+  \\
+
+  Backend &
+  \begin{lr}
+    \textbf{Languages}
+    \begin{compactlist}
+      \item Python
+      \item Node
+      \item Go
+      \item PHP
+    \end{compactlist}
+    \columnbreak
+    \textbf{Concepts}
+    \begin{compactlist}
+      \item Serverless
+      \item Firebase
+    \end{compactlist}
+  \end{lr}
+  \\
+
+  Operations &
+  \begin{lr}
+    \textbf{CI/CD}
+    \begin{compactlist}
+      \item Docker
+      \item Github Actions
+      \item Google Cloud Build
+      \item Drone CI
+    \end{compactlist}
+
+    \columnbreak
+
+    \textbf{Cloud Providers}
+    \begin{compactlist}
+      \item AWS
+      \item Google Cloud
+    \end{compactlist}
+  \end{lr}
+  \\
+
+  Other &
+  Web scraping \newline
+  CLIs \newline
+  Mail Hosting \newline
+  TLS, HTTP, HTTPS \newline
+  Linux systems \newline
+  LaTeX \newline
+  \\
+
+
+\end{SectionTable}
+
+\newcommand{\event}[4]{
+  #1 &
+  \textbf{#2 \note{#3}} \newline
+  #4
+  \\
+}
+
+\begin{SectionTable}{\headingfont Talks \& Courses}
+
+  \event{Talk}{Fight of the mobiles}
+  {https://github.com/cupcakearmy/fight-of-the-mobiles}
+  {
+    Talk about the comparison of mobile app frameworks. \newline
+    Investigates ease of use, adoption, community and performance.
+  }
+
+
+  \event{Talk}{Why Typescript?}
+  {https://github.com/cupcakearmy/typescript-talk}
+  {Talk about the benefits of using and adopting TypeScript.}
+
+  \event{Course}{Python for beginners}
+  {https://www.ifsr.de/}
+  {Beginner course into the Python programming language at TU-Dresden.}
+
+\end{SectionTable}
+
+\newcommand{\project}[5]{
+  #1 \note{#2} &
+  \textit{Language / Tools:} #3 \newline
+  \textit{Type: } #4 \newline
+  #5
+  \\
+}
+
+\begin{SectionTable}{\headingfont Projects}
+
+  \project{morphus}{https://github.com/cupcakearmy/morphus}
+  {Go}{Server}
+  {
+    a lightweight image resizing proxy
+  }
+
+  \project{autorestic}{https://github.com/cupcakearmy/autorestic}
+  {Go}{CLI}
+  {
+    Config driven, easy backup cli for restic.
+  }
+
+  \project{ora}{https://github.com/cupcakearmy/ora}
+  {Svelte}{Cross Browser Extension}
+  {
+    A browser extension that allows you to use Ora in your browser.
+  }
+
+  \project{cryptgeon}{https://github.com/cupcakearmy/cryptgeon}
+  {Rust, Svelte}{Web App}{
+    cryptgeon is a secure, open source note sharing service inspired by PrivNote. Server has a 0 trust assumption and cannot read contents.
+  }
+
+  \project{unpixel}{https://github.com/cupcakearmy/unpixel}
+  {Typescript, Electron}{Cross Platform Desktop App}{
+    Utility app for helping with the 20/20/20 rule for alleviating CVS induced stress.
+  }
+
+  \project{unbrew}{https://github.com/cupcakearmy/unbrew}
+  {Javascript}{CLI}{
+    Cleanup utility for homebrew.
+  }
+
+  \project{canihazusername}{https://github.com/cupcakearmy/canihazusername}
+  {Typescript}{Library}{
+    Configurable username generator
+  }
+
+  \project{svelte cloudinary}{https://github.com/cupcakearmy/svelte-cloudinary}
+  {Typescript}{Library}{
+    Cloudinary SDK for Svelte
+  }
+
+  \project{DDNS Cloudflare}{https://github.com/cupcakearmy/docker-ddns-cloudflare}
+  {Typescript, Dockerfile}{Docker Image, Service}{
+    Simple container for setting setting and updating cloudflare records to your local ip address.
+  }
+
+  \project{nginx docker}{https://github.com/cupcakearmy/docker-static}
+  {Docker}{Docker Image, Server}{
+    Compiled nginx docker image with support for ETags and brotli compression.
+  }
+
+  \project{radicale docker}{https://github.com/cupcakearmy/docker-radicale}
+  {Dockerfile, Shell}{Docker Image, Service}{
+    Radicale docker image for easy deployment. Bcrypt authentication inclusive.
+  }
+
+  \project{npm trojan horse}{https://github.com/cupcakearmy/npm-security-walkthrough}
+  {Javascript}{Library}{
+    Proof of concept trojan horse for npm.
+  }
+
+  \project{formhero}{https://github.com/cupcakearmy/formhero}
+  {Typescript}{React Library}{
+    Fully customisable react form utility.
+  }
+
+  \project{drone deployment}{https://github.com/cupcakearmy/drone-deploy}
+  {Python}{Drone CI Plugin}{
+    Plugin for Drone CI that deploys to a remote server.
+  }
+\end{SectionTable}
+
+\newcommand{\volunteer}[3]{
+  #1 \note{#2} &
+  #3
+  \\
+}
+
+\begin{SectionTable}{\headingfont Volunteer Work \& Other Activities}
+
+  \volunteer{Bastli}
+  {https://bastli.ethz.ch/}
+  { I’ve been a member of the Bastli, an Electrical Workshop sponsored by the ETH dedicated to free time fun projects. We worked on small Embedded devices and general software development, mostly for fun.}
+
+  \volunteer{Campusradio Dresden}
+  {https://campusradiodresden.de/}
+  {I've been a member of CampusRadio Dresden, the local student radio, where I help with their online presence and IT infrastructure. }
+
+  \volunteer{AGDSN}
+  {https://www.agdsn.de/}
+  {I was also involved in the AGDSN, which is the student organisation which provides gigabit internet to every single room in student halls, serving as an ISP. We manage the user-base as well as the hardware infrastructure needed for the network and I had the opportunity to play with xen virtualization servers and some switches.}
+
+  \volunteer
+  {InCube}
+  {https://incubechallenge.com/}
+  {In the summer of 2018 I joined the ETH Entrepreneur Club challenge called InCube [6] where we had to develop a startup in a team of strangers living all in the same glass cube in the middle of Zürich exposing the process to the public. }
+
+\end{SectionTable}
+
+\newpage
+
+% Make text smaller for footnotes
+\renewcommand{\baselinestretch}{0}
+\fontsize{8pt}{8pt}
+\selectfont
+
+\begin{SectionTable}{} &
+  \printendnotes
+\end{SectionTable}
+
+\end{document}
