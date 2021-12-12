@@ -33,7 +33,7 @@
 }
 
 % Utility
-\newcommand{\version}{1.0.0}
+\newcommand{\version}{1.0.1}
 \newcommand{\headingfont}{\Large\color{accent}\BluuNext}
 
 \newenvironment{compactlist}{
@@ -86,49 +86,60 @@
   \end{lr}
 \end{SectionTable}
 
+\newcommand{\step}[5]{
+  #1 &
+  #2 \note{#3} \newline
+  \textbf{#4} \newline
+  #5
+  \\
+}
+
 \begin{SectionTable}{\headingfont Industry Experience}
-  2013 &
-  European Central Bank \note{https://www.ecb.europa.eu/} \newline
-  \textbf{Web \& Publications Internship } \newline
-  I worked in the Web \& Publications department, where I helped develop and update webpages.
-  \\
 
-  2017 -- 2020 &
-  3m5 \note{https://www.3m5.de/} \newline
-  \textbf{Full-stack Developer} \newline
-  B2B Development \& maintenance of projects for customers. Websites and mobile apps.
-  \\
+  \step{2020 -- Current}{Lovoo}
+  {https://www.lovoo.com/}
+  {Software Engineer}
+  {Software development for the mobile app, website and internal tools.}
 
-  2020 -- Current &
-  Lovoo \note{https://www.lovoo.com/} \newline
-  \textbf{Software Engineer} \newline
-  Software development for the mobile app, website and internal tools.
-  \\
+  \step{2016 -- Current}{Self-Employed}
+  {https://nicco.io}
+  {Freelancer - Software Engineer}
+  {}
+
+  \step{2017 -- 2020}{3m5}
+  {https://www.3m5.de/}
+  {Full-stack Developer}
+  {B2B Development \& maintenance of projects for customers. Websites and mobile apps.}
+
+  \step{2013}{European Central Bank}
+  {https://www.ecb.europa.eu/}
+  {Web \& Publications Internship }
+  { I worked in the Web \& Publications department, where I helped develop and update webpages.}
 
 \end{SectionTable}
 
+
 \begin{SectionTable}{\headingfont Education}
-  2002 -- 2014 &
-  European School Frankfurt \note{https://www.esffm.org/} \newline
-  \textbf{European Baccalaureate} \newline
-  I took written examinations in: Italian, German, maths, physics and economics and oral exams in: Italian, English and geography. My last years included also philosophy and history.
-  \\
 
-  2014 -- 2016 &
-  ETH Zürich \note{https://ethz.ch} \newline
-  Electrical Engineering
-  \\
+  \step{2020 -- Current}{TU Dresden}
+  {https://tu-dresden.de/}
+  {Master of Science}
+  {Computer Science}
 
-  2016 -- 2020 &
-  TU Dresden \note{https://tu-dresden.de/} \newline
-  \textbf{Bachelor of Science} \newline
-  Computer Science
-  \\
+  \step{2016 -- 2020}{TU Dresden}
+  {https://tu-dresden.de/}
+  {Bachelor of Science}
+  {Computer Science}
 
-  2020 -- Current &
-  TU Dresden \note{https://tu-dresden.de/} \newline
-  \textbf{Master of Science} \newline
-  Computer Science
+  \step{2014 -- 2016}{ETH Zürich}
+  {https://ethz.ch}
+  {Electrical Engineering}
+  {}
+
+  \step{2002 -- 2014}{European School Frankfurt}
+  {https://www.esffm.org/}
+  {European Baccalaureate}
+  { I took written examinations in: Italian, German, maths, physics and economics and oral exams in: Italian, English and geography. My last years included also philosophy and history.}
 
 \end{SectionTable}
 
@@ -191,6 +202,7 @@
       \item Github Actions
       \item Google Cloud Build
       \item Drone CI
+      \item Git
     \end{compactlist}
 
     \columnbreak
@@ -206,8 +218,6 @@
   Other &
   Web scraping \newline
   CLIs \newline
-  Mail Hosting \newline
-  TLS, HTTP, HTTPS \newline
   Linux systems \newline
   LaTeX \newline
   \\
@@ -249,6 +259,33 @@
   #5
   \\
 }
+
+\newcommand{\volunteer}[3]{
+  #1 \note{#2} &
+  #3
+  \\
+}
+
+\begin{SectionTable}{\headingfont Volunteer Work \& Other Activities}
+
+  \volunteer{Bastli}
+  {https://bastli.ethz.ch/}
+  { I’ve been a member of the Bastli, an Electrical Workshop sponsored by the ETH dedicated to free time fun projects. We worked on small Embedded devices and general software development, mostly for fun.}
+
+  \volunteer{Campusradio Dresden}
+  {https://campusradiodresden.de/}
+  {I've been a member of CampusRadio Dresden, the local student radio, where I help with their online presence and IT infrastructure. }
+
+  \volunteer{AGDSN}
+  {https://www.agdsn.de/}
+  {I was also involved in the AGDSN, which is the student organisation which provides gigabit internet to every single room in student halls, serving as an ISP. We manage the user-base as well as the hardware infrastructure needed for the network and I had the opportunity to play with xen virtualization servers and some switches.}
+
+  \volunteer
+  {InCube}
+  {https://incubechallenge.com/}
+  {In the summer of 2018 I joined the ETH Entrepreneur Club challenge called InCube [6] where we had to develop a startup in a team of strangers living all in the same glass cube in the middle of Zürich exposing the process to the public. }
+
+\end{SectionTable}
 
 \begin{SectionTable}{\headingfont Projects}
 
@@ -326,32 +363,6 @@
   }
 \end{SectionTable}
 
-\newcommand{\volunteer}[3]{
-  #1 \note{#2} &
-  #3
-  \\
-}
-
-\begin{SectionTable}{\headingfont Volunteer Work \& Other Activities}
-
-  \volunteer{Bastli}
-  {https://bastli.ethz.ch/}
-  { I’ve been a member of the Bastli, an Electrical Workshop sponsored by the ETH dedicated to free time fun projects. We worked on small Embedded devices and general software development, mostly for fun.}
-
-  \volunteer{Campusradio Dresden}
-  {https://campusradiodresden.de/}
-  {I've been a member of CampusRadio Dresden, the local student radio, where I help with their online presence and IT infrastructure. }
-
-  \volunteer{AGDSN}
-  {https://www.agdsn.de/}
-  {I was also involved in the AGDSN, which is the student organisation which provides gigabit internet to every single room in student halls, serving as an ISP. We manage the user-base as well as the hardware infrastructure needed for the network and I had the opportunity to play with xen virtualization servers and some switches.}
-
-  \volunteer
-  {InCube}
-  {https://incubechallenge.com/}
-  {In the summer of 2018 I joined the ETH Entrepreneur Club challenge called InCube [6] where we had to develop a startup in a team of strangers living all in the same glass cube in the middle of Zürich exposing the process to the public. }
-
-\end{SectionTable}
 
 \newpage
 
