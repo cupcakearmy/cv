@@ -33,7 +33,7 @@
 }
 
 % Utility
-\newcommand{\version}{1.0.2}
+\newcommand{\version}{1.0.3}
 \newcommand{\headingfont}{\Large\color{accent}\BluuNext}
 
 \newenvironment{compactlist}{
@@ -94,7 +94,12 @@
   \\
 }
 
-\begin{SectionTable}{\headingfont Industry Experience}
+\begin{SectionTable}{} &
+  \renewcommand*\contentsname{\headingfont Contents}
+  \tableofcontents
+\end{SectionTable}
+
+\begin{SectionTable}{\headingfont \section{Industry Experience}}
 
   \step{2020 -- Current}{Lovoo}
   {https://www.lovoo.com/}
@@ -119,7 +124,7 @@
 \end{SectionTable}
 
 
-\begin{SectionTable}{\headingfont Education}
+\begin{SectionTable}{\headingfont \section{Education}}
 
   \step{2020 -- Current}{TU Dresden}
   {https://tu-dresden.de/}
@@ -144,7 +149,7 @@
 \end{SectionTable}
 
 
-\begin{SectionTable}{\headingfont Skills}
+\begin{SectionTable}{\headingfont \section{Skills}}
 
   Languages &
   Italian: Native \newline
@@ -232,7 +237,7 @@
   \\
 }
 
-\begin{SectionTable}{\headingfont Talks \& Courses}
+\begin{SectionTable}{\headingfont \section{Talks \& Courses}}
 
   \event{Talk}{Fight of the mobiles}
   {https://github.com/cupcakearmy/fight-of-the-mobiles}
@@ -266,7 +271,7 @@
   \\
 }
 
-\begin{SectionTable}{\headingfont Volunteer Work \& Other Activities}
+\begin{SectionTable}{\headingfont \section{Volunteer Work \& Other Activities}}
 
   \volunteer{Love Foundation}
   {https://love-foundation.org/}
@@ -291,7 +296,13 @@
 
 \end{SectionTable}
 
-\begin{SectionTable}{\headingfont Projects}
+\begin{SectionTable}{\headingfont \section{Projects}}
+
+  \project{locale switcher}{https://github.com/locale-switcher/locale-switcher}
+  {Svelte, Typescript}{Cross Browser Extension}
+  {
+    I took over and rewrote this dev tool extension that allows developers to switch between different locales.
+  }
 
   \project{morphus}{https://github.com/cupcakearmy/morphus}
   {Go}{Server}
@@ -374,9 +385,12 @@
 \renewcommand{\baselinestretch}{0}
 \fontsize{8pt}{8pt}
 \selectfont
-
+% Custom header for the footnotes
+\DeclareInstance{enotez-list}{custom}{paragraph}{
+  heading = \headingfont \section{References \& Links} ,
+}
 \begin{SectionTable}{} &
-  \printendnotes
+  \printendnotes[custom]
 \end{SectionTable}
 
 \end{document}
