@@ -35,7 +35,7 @@
 % Variables
 \usepackage{datatool, filecontents}
 \DTLsetseparator{,}
-\DTLloaddb[noheader, keys={key,value}]{env}{./env.dat}
+\DTLloaddb[noheader, keys={key,value}]{env}{./vars.dat}
 \newcommand{\var}[1]{\DTLfetch{env}{key}{#1}{value}}
 
 
