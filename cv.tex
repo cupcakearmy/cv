@@ -2,7 +2,7 @@
 % Color Scheme Adapted/Inspired/Shamefully stolen from: https://jacobleech.com/
 
 
-\documentclass[letterpaper,12pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{hyperref, enumitem, longtable, amsmath, array, multicol }
 \usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0in, footskip=.2in]{geometry}
@@ -32,8 +32,17 @@
   \endnote{\href{#1}{#1}}
 }
 
+% Variables
+\usepackage{datatool, filecontents}
+\DTLsetseparator{,}
+\DTLloaddb[noheader, keys={key,value}]{env}{./env.dat}
+\newcommand{\var}[1]{\DTLfetch{env}{key}{#1}{value}}
+
+
 % Utility
-\newcommand{\version}{1.0.4}
+\newcommand{\version}{\var{version}}
+\newcommand{\commit}{\var{commit}}
+\newcommand{\commitShort}{\var{commitShort}}
 \newcommand{\headingfont}{\Large\color{accent}\BluuNext}
 
 \newenvironment{compactlist}{
@@ -58,35 +67,6 @@
 	\begin{longtable}{Rp{5.2in}} & #1 \\}
 {\end{longtable}\vspace{-.3cm}}
 
-% Actual Document
-\begin{document}
-
-\begin{SectionTable}{\headingfont \Huge Niccolo Borgioli}
-  &
-  \begin{lr}
-    E-Mail:   \href{mailto:hi@nicco.io}{hi@nicco.io} \newline
-    Mobile:    \href{tel:+49 176 43052380}{+49 176 43052308} \newline
-    Website:  \href{https://nicco.io}{nicco.io} \newline
-    Blog: \href{http://nicco.io/blog}{nicco.io/blog} \newline
-    Github: \href{https://github.com/cupcakearmy}{cupcakearmy} \newline
-    Citizenship: Italy, Germany \newline
-
-    \footnotesize{
-      \textit{Revision:} \version \newline
-      \textit{Date:} \today
-    }
-
-    \columnbreak
-
-    {
-      \setlength{\fboxsep}{0pt}
-      \setlength{\fboxrule}{3pt}
-      \fcolorbox{accent}{accent}{\includegraphics[height=4.5cm]{photo}}
-    }
-
-  \end{lr}
-\end{SectionTable}
-
 \newcommand{\step}[5]{
   #1 &
   #2 \note{#3} \newline
@@ -94,6 +74,37 @@
   #5
   \\
 }
+
+% Actual Document
+\begin{document}
+
+\begin{SectionTable}{\headingfont \Huge Niccolo Borgioli}
+  &
+  \begin{lr}
+    E-Mail:   \href{mailto:hi@nicco.io}{hi@nicco.io} \newline
+    Website:  \href{https://nicco.io}{nicco.io} \newline
+    Blog: \href{http://nicco.io/blog}{nicco.io/blog} \newline
+    Github: \href{https://github.com/cupcakearmy}{cupcakearmy} \newline
+    Citizenship: Italy, Germany \newline
+
+    \footnotesize{
+      Proudly built automatically \newline
+      \textit{Revision:} \version \newline
+      \textit{Commit:}   \commitShort \newline
+      \textit{Date:} \today \newline
+      \textit{Source:} \href{https://github.com/cupcakearmy/cv/}{/cupcakearmy/cv}
+    }
+
+    \columnbreak
+
+    {
+      \setlength{\fboxsep}{0pt}
+      \setlength{\fboxrule}{1pt}
+      \fcolorbox{accent}{accent}{\includegraphics[height=5cm]{photo}}
+    }
+
+  \end{lr}
+\end{SectionTable}
 
 \begin{SectionTable}{} &
   \renewcommand*\contentsname{\headingfont Contents}
@@ -189,11 +200,11 @@
       \item Python
       \item Node
       \item Go
-      \item PHP
     \end{compactlist}
     \columnbreak
     \textbf{Concepts}
     \begin{compactlist}
+      \item Microservices
       \item Serverless
       \item Firebase
     \end{compactlist}
