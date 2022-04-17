@@ -19,9 +19,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install fonts
-        run: make fonts
+        run: make -B fonts
       - name: Run Tectonic
-        run: make build
+        run: make -B build
       - name: Release
         uses: ncipollo/release-action@v1
         with:
